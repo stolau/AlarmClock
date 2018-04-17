@@ -9,9 +9,7 @@ decode_results results;
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("Enabling IRin");
   irrecv.enableIRIn();
-  Serial.println("Enabled IRin");
 }
 
 void loop() {
