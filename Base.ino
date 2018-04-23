@@ -26,9 +26,6 @@ LiquidCrystal lcd(LCD_PIN_RS,LCD_PIN_E,LCD_PIN_DB4,LCD_PIN_DB5,LCD_PIN_DB6,LCD_P
 
 
 // define vars for testing menu
-const int timeout = 10000;       //define timeout of 10 sec
-char menuOption = 0;
-long time0;
 int a = 1;
 int RECV_PIN = 11;
 
@@ -50,6 +47,7 @@ void loop()
 {
     if (irrecv.decode(&results)) {
       if((results.value, HEX) != 0xFFFFFFF){
+          // if IR value other than FFFFFF, print the value on the LCD
       lcd.clear();
       lcd.setCursor(0,0);
       lcd.print(results.value, HEX);
@@ -58,8 +56,11 @@ void loop()
       irrecv.resume();
     }
     if(a==1){
+        //starts the motors
       digitalWrite(MOTOR_1, HIGH);
       digitalWrite(MOTOR_2, HIGH);
+        
+        //writes on the LCD
       lcd.setCursor(0, 0);
       lcd.print("I dreamt I was");
       lcd.setCursor(0, 1);
@@ -71,8 +72,10 @@ void loop()
       a = 2;
     }
     if(a==2){
+        //stops the motors
       digitalWrite(MOTOR_1, LOW);
       digitalWrite(MOTOR_2, LOW);
+       //writes on the LCD
       lcd.clear();
       lcd.setCursor(0,0);
       lcd.print("STOP");
