@@ -12,7 +12,7 @@ All the libraries in Arduino file must be moved to arduino's library.
 
 
 
-----------Known Bugs---------\n
+--------------------------Known Bugs------------------------------------------
 Motors used in this project do not have enough power to move the clock.
 .stl files are scaled incorrectly, make sure you check the size before printing.
 
