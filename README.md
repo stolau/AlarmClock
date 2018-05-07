@@ -8,7 +8,7 @@ Contains source code, files for 3D printable model and assigned weekly reports.
 Model is printable with every 3D machine that supports .stl format. Also includes
 original .blend file, which can be used to convert model for another formats.
 
-All the libraries in Arduino file must be moved to arduino's library.
+All the libraries in Arduino file must be moved to arduino's library folder.
 
 
 
